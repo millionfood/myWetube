@@ -1,0 +1,11 @@
+extends layout/main
+
+block content 
+    .form_wrapper
+        .form_box 
+            .form_text     
+                span Login Page
+            form.form_main(action=routes.login,method="post")
+                input(type="text",name="email",placeholder="email") 
+                input(type="password",name="password",placeholder="password") 
+                input(type="submit",value="Login") 

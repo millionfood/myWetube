@@ -1,0 +1,27 @@
+extends layout/main
+include mixins/videoBlock
+
+block content 
+    .userDetail_wrapper
+        .userDetail_box
+            .userDetail_pageText
+                span Profile Page
+            .userDetail_img_box 
+                .userDetail_img
+                    img(src=`/${userModel.avatarUrl}`)
+            .userDetail_name
+                span=userModel.name
+            if user.id == userModel.id
+                .userDetail_btn
+                    a(href=`${routes.user}${routes.userEdit(user.id)}`)
+                        button Edit Profile 
+                    a(href=`${routes.user}${routes.changePassword(user.id)}`)
+                        button Change Password
+            .userDetail_video 
+                each gamja in userModel.videos 
+                    +videoBlock({
+                        videoFile:gamja.fileUrl,
+                        id:gamja._id,
+                        title:gamja.title,
+                        description:gamja.description
+                    })

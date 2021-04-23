@@ -1,0 +1,20 @@
+extends layout/main 
+
+block content 
+    .form_wrapper
+        .form_box
+            .form_text 
+                span Upload Page
+            .form_video_box 
+                .form_video 
+                    video#recordingVideo
+                .form_btn   
+                    button#recordingBtn.button Start Recording
+            form.form_main(action=routes.uploads, method ="post", enctype="multipart/form-data")
+                label 파일선택
+                    input(type="file", name="videoFile", accept="video/*",onchange="javascript:document.getElementById('file_text').value=this.value")
+                input(type="text",id="file_text",readonly="readonly",placeholder="File Path")
+                input(type="text", name="title", placeholder="Title")
+                input(type="text", name="description", placeholder="Description") 
+                input(type="submit" value="UPLOAD") 
+            

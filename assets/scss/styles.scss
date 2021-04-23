@@ -1,0 +1,16 @@
+@import "./config/reset.scss";
+@import "./config/_variables";
+
+@import "./main.scss";
+
+
+@import "./pages/home.scss";
+@import "./pages/userDetail.scss";
+@import "./pages/videoDetail.scss";
+
+@import "./partials/header.scss";
+@import "./partials/form.scss";
+@import "./partials/button.scss";
+@import "./partials/footer.scss";
+@import "./partials/videoBlock.scss";
+@import "./partials/flash.scss";

@@ -1,0 +1,144 @@
+.video_wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .video_box{
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .video_title{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            span{
+                font-size: $titlefontsize;
+            }
+        }
+        .video_container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            video{
+                margin-bottom: 50px;
+            }
+            .video_btn_and_text{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                border: 2px solid $grey;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                border-bottom-style: none;
+                padding-top: 20px;
+                box-sizing: border-box;
+                .video_text_box{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    font-weight: 600;
+                    font-size: 17px;
+                    margin-left: 20px;
+                    h2{
+                        margin-bottom: 10px;
+                    }
+                }
+                .video_edit_btn{
+                    margin-right: 10px;
+                    bottom: 50px;
+                    input{
+                        width: 100px;
+                        height: 50px;
+                        transform: translateY(14px);
+                        border-radius: 10px;
+                    }
+                }
+            }
+        }
+        .video_more_information{
+            width: 100%;
+            display: flex;  
+            flex-direction: column;
+            border: 2px solid $grey;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-top-style: none;
+            padding: 0px 20px;
+            padding-bottom: 20px;
+            box-sizing: border-box;
+            .video_views{
+                font-weight: 400;
+                font-size: 15px;
+                margin-bottom: 5px;
+            }
+            .video_creator{
+                font-weight: 400;
+                font-size: 14px;
+                span{
+                    a{
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .video_comment_container{
+            width: 100%;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .video_comment_number{
+                margin-bottom: 20px;
+            }
+            .video_comment_input{
+                form{
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+                    input:not(:last-child){
+                        width: 300px;
+                        height: 40px;
+                        border: 1px solid $grey;
+                        border-top-left-radius: 10px;
+                        border-bottom-left-radius: 10px;
+                        padding: 0 10px;
+                    }
+                    input:last-child{
+                        height: 40px;
+                        width: 60px;
+                        border-top-right-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                        cursor: pointer;
+                    }
+                }
+                
+            }
+            .video_comment_output{
+                ul{
+                    li{
+                        position: relative;
+                        padding: 10px 20px;
+                        border: 1px solid $grey;
+                        border-radius: 10px;
+                        margin-bottom: 10px;
+                        .button{
+                            position: absolute;
+                            top: -5px;
+                            right: -5px;
+                            width: 15px;
+                            height: 15px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 50%;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

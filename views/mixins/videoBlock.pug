@@ -1,0 +1,6 @@
+mixin videoBlock(video={})
+    .videoBlock
+        a(href=`/video${routes.videoDetail(video.id)}`)
+            video(src=`/${video.videoFile}`,controls=false)
+            span.video_title=video.title
+            span.video_description=video.description

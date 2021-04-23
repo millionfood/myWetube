@@ -1,0 +1,43 @@
+extends layout/main
+
+block content 
+    .video_wrapper
+        .video_box
+            .video_title
+                span Video Detail Page
+            .video_container 
+                video(src=`/${video.fileUrl}`,controls= true)
+                .video_btn_and_text
+                    .video_text_box
+                        h2=`제목: ${video.title}`
+                        h3=`설명: ${video.description}`
+                    if user
+                        if video.creator.id == user.id
+                            form.video_edit_btn(action=`/video${routes.videoEdit(video.id)}` method="get")
+                                input.button(type="submit", value="Edit") 
+            .video_more_information
+                .video_views    
+                    if video.views === 0
+                        span.first_span 0 view
+                    else 
+                        span.second_span #{video.views} views
+                .video_creator 
+                    span made by
+                        a(href=`${routes.user}${routes.userDetail(video.creator.id)}`)   #{video.creator.name}
+            
+            .video_comment_container
+                .video_comment_number   
+                    span #{video.comments.length} 개의 Comments
+                if user
+                    input#userId(type="hidden",value=user.id)
+                    .video_comment_input 
+                        form#comment_form
+                            input#comment_input(type="text",placeholder="comment")
+                            input(type="submit")
+                .video_comment_output   
+                    ul.video_comment_output_box
+                        each potato in video.comments.reverse()
+                            li #{potato.text}
+                                div#deleteBtn.button X
+                                input#commentId(type="hidden",value=potato._id)
+                                input#creatorId(type="hidden",value=potato.creator)

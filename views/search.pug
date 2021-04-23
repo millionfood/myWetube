@@ -1,0 +1,14 @@
+extends layout/main
+include mixins/videoBlock
+
+block content 
+    h1 searching by #{search}
+    div     
+        if video
+            each gamja in video
+                +videoBlock({
+                    id:gamja.id,
+                    videoFile:gamja.fileUrl,
+                    title:gamja.title,
+                    description:gamja.description
+                })
